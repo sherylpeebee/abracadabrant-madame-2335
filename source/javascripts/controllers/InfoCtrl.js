@@ -2,11 +2,20 @@ angular.module('GriftrApp')
 .controller("InfoCtrl", function($scope, $rootScope, $state, $location, $http){
 console.log("get dat info");
 
+
+
+
+$('.collapsible').collapsible({
+  accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+});
+
   if($rootScope.currentUser){
     currentUser = $rootScope.currentUser;
   } else{
     currentUser = null; // Add more to catch null?
   }
+
+  $scope.hideForm = currentUser.owner ? true : false;
 
   $scope.submitInfo = function(user){
     if($state.current.name === "info.owner"){
