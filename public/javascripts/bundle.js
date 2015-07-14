@@ -215,7 +215,7 @@ angular.module('GriftrApp')
   $scope.goToProfile = function() {
     if ($rootScope.currentUser.owner) {
       console.log('owner');
-      $state.go('ownerProfile');
+      $state.go('info.owner');
     } else {
       console.log('traveller');
       $state.go('info.traveller');
