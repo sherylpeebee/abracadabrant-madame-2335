@@ -10,11 +10,12 @@ angular.module('GriftrApp')
   $scope.goToProfile = function() {
     if ($rootScope.currentUser.owner) {
       console.log('owner');
-      $state.go('info.owner');
+      $state.go('ownerProfile');
     } else {
       console.log('traveller');
       $state.go('info.traveller');
     }
+    
     console.log($rootScope.currentUser);
   }
 });
