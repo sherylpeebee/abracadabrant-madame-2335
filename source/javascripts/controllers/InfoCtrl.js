@@ -40,11 +40,11 @@ console.log("get dat info");
 
   $scope.submitProperty = function(house){
     house.user = $rootScope.currentUser.twitter.id;
-    house.image = 'http://www.keralahouseplanner.com/wp-content/uploads/2012/09/kerala-house-plan-duplex1.jpg';
     // house.user = currentUser;
-    console.log(house);
+    // console.log(house);
     $http.post("/house", house).success(function(data, status){
       console.log(data);
+      $state.go('ownerProfile');
     }).catch(function(err){
       console.log(err);
     });
