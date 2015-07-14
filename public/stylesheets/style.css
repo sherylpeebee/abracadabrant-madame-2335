@@ -12,6 +12,9 @@
 .icon-block .material-icons {
 	font-size: inherit;
 }
+a {
+  cursor: pointer;
+}
 img {
   border-bottom: 10px solid azure;
   line-height: 10px;
@@ -20,6 +23,12 @@ img {
 body {
   margin: 0;
   background-color: black;
+}
+h4, h5 {
+  color: white;
+}
+input {
+  color: white !important;
 }
 .intro {
   position: relative;

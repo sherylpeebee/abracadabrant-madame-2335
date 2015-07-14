@@ -20,6 +20,7 @@
       <ul class="right hide-on-med-and-down">
         <li><a ui-sref='listings'>Listings</a></li>
         <% if (user) { %>
+          <!-- <li><a target="_self" ui-sref="info.owner">{{currentUser.twitter.displayName}}</a></li> -->
           <li><a target="_self" ng-click="goToProfile()">{{currentUser.twitter.displayName}}</a></li>
           <li><a target="_self" href="/auth/logout" class="glyphicon glyphicon-home">&nbsp;Logout</a></li>
         <% } else { %>
