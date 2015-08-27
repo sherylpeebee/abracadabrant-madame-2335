@@ -110,7 +110,7 @@ h3.find-button {
     color: #6A6C6D;
     display: none;
     /*border-radius: 10px;*/
-    border-radius: 7px;
+    border-radius: 7px !important;
     position: relative;
     top: 0px !important;
     /*top: 130px;*/
@@ -128,5 +128,5 @@ h3.find-button:hover {
 
 #intro {
   color: #6A6C6D;
-  font-variant: small-caps;
+  font-variant: small-caps !important;
 }
