@@ -65,3 +65,8 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+
+// export CALLBACK_URL="https://abracadabrant-madame-2335.herokuapp.com/auth/twitter/callback"
+// export CONSUMER_KEY="qmuAQP5Ne7N38z9ijiZQNjwoz"
+// export CONSUMER_SECRET="nbsxZVCPx7pxZPuCWA06R69rm4f4eKbn2jNp8jGBFJRoKBSFVx"
+// export MONGOLAB_URI="mongodb://heroku_94rc8k4r:bqs2rg2d2f28arh9oq6snqvi4g@ds047632.mongolab.com:47632/heroku_94rc8k4r"

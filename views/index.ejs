@@ -14,17 +14,17 @@
   <link href="stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
-  <nav class="light-blue darken-4" role="navigation" ng-controller="NavCtrl">
+  <nav id="main_nav" role="navigation" ng-controller="NavCtrl">
 
     <div class="nav-wrapper container"><a id="logo-container" ui-sref="home" class="brand-logo">Griftr</a>
       <ul class="right hide-on-med-and-down">
-        <li><a ui-sref='listings'>Listings</a></li>
+        <li ><a class="nav-options" ui-sref='listings'>Listings</a></li>
         <% if (user) { %>
           <!-- <li><a target="_self" ui-sref="info.owner">{{currentUser.twitter.displayName}}</a></li> -->
-          <li><a target="_self" ng-click="goToProfile()">{{currentUser.twitter.displayName}}</a></li>
-          <li><a target="_self" href="/auth/logout" class="glyphicon glyphicon-home">&nbsp;Logout</a></li>
+          <li ><a class="nav-options" target="_self" ng-click="goToProfile()">{{currentUser.twitter.displayName}}</a></li>
+          <li ><a class="nav-options" target="_self" href="/auth/logout" class="glyphicon glyphicon-home">&nbsp;Logout</a></li>
         <% } else { %>
-          <li><a target="_self" href="/auth/twitter" class="glyphicon glyphicon-home">&nbsp;Login</a></li>
+          <li ><a class="nav-options" target="_self" href="/auth/twitter" class="glyphicon glyphicon-home">&nbsp;Login</a></li>
         <% } %>
       </ul>
 
@@ -45,7 +45,7 @@
   <ui-view></ui-view>
 
 
-  <footer class="page-footer indigo darken-3">
+  <%# <footer class="page-footer indigo darken-3">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
@@ -73,12 +73,11 @@
       Made by <a class="orange-text text-lighten-3" href="https://github.com/warlyware/">Dan</a> &amp <a class="orange-text text-lighten-3" href="https://github.com/sherylpeebee">Sheryl</a>
       </div>
     </div>
-  </footer>
+  </footer>%>
 
 
   <!--  Scripts-->
   <script src="/packages/jquery/dist/jquery.min.js"></script>
-  <script src="/packages/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="/packages/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="/packages/materialize/materialize.min.js"></script>
   <script src="/packages/lettering.js/jquery.lettering-0.6.1.min.js"></script>

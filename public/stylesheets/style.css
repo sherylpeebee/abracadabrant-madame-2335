@@ -21,9 +21,14 @@ img {
   display: block !important;
 }
 body {
-  margin: 0;
-  background-color: black;
+  /*margin: 0;*/
+  /*background-color: rgb(111, 199, 249);*/
+  background-image: url("http://i.huffpost.com/gen/1367942/images/o-TRAVEL-YOUNG-facebook.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  z-index: -1;
 }
+
 h4, h5 {
   color: white;
 }
@@ -43,17 +48,7 @@ input {
   position: relative;
   z-index: -1;
 }
-div#find-peace {
-  margin-top: -300px;
-  display: none;
-  color: black;
-}
 
-div#find-place {
-  margin-top: -300px;
-  display: none;
-  color: azure;
-}
 .parallax-container {
     height: 578px;
   }
@@ -63,4 +58,67 @@ div#find-place {
   cursor: pointer;
   position: relative;
   top: -150px;
+}
+
+#white-bar {
+    height: 16%;
+    width: 100%;
+    background-color: white;
+    color: black;
+    position: absolute;
+    top: 10%;
+}
+
+nav#main_nav {
+    height: 107px;
+    background-color: cadetblue;
+}
+
+img#left-banner {
+    /*margin-bottom: 11%;*/
+    margin-top: -125px;
+}
+/*https://pbs.twimg.com/profile_images/378800000397127630/3c7dfe9f2943408ca178dede7c6ec39a.jpeg*/
+
+
+/*http://sharetu.com/wp-content/uploads/2015/07/o-TRAVELING-ALONE-facebook.jpg*/
+
+div#footer-containter {
+    height: 110px;
+}
+
+footer.page-footer {
+    margin-top: 0px;
+    padding-top: 20px;
+    background-color: #ee6e73;
+}
+
+footer.page-footer .footer-copyright {
+    overflow: hidden;
+    height: 50px;
+    line-height: 50px;
+    color: rgba(255, 255, 255, 0.8);
+     background-color: inherit;
+}
+h3.find-button {
+    padding: 17px;
+    border: 5px solid;
+    color: cadetblue;
+    /*display: inline;*/
+    display: none;
+    border-radius: 10px;
+    position: relative;
+    top: 130px;
+}
+
+h3#find-peace {
+    position: relative;
+    left: 25%;
+}
+
+h3#find-place {
+    /* position: relative; */
+    /* right: 0; */
+    position: relative;
+    right: 25%;
 }

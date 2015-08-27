@@ -15,7 +15,7 @@ angular.module('GriftrApp')
       console.log('traveller');
       $state.go('info.traveller');
     }
-    
+
     console.log($rootScope.currentUser);
-  }
+  };
 });

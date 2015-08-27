@@ -8,5 +8,5 @@ gulp.task("default", function() {
 gulp.task("js", function() {
   gulp.src("./source/javascripts/**/*.js")
   .pipe(concat("bundle.js"))
-  .pipe(gulp.dest("./public/javascripts/"))
+  .pipe(gulp.dest("./public/javascripts/"));
 });
