@@ -110,10 +110,10 @@ h3.find-button {
     display: none;
     border-radius: 10px;
     position: relative;
-    top: 0px;
+    top: 0px !important;
     /*top: 130px;*/
     transition: background-color .8s ease;
-    font-size: inherit;
+    font-size: inherit !important;
     /*transition: color .8s ease;*/
 }
 h3.find-button:hover {
