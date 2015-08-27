@@ -104,11 +104,13 @@ h3#find-place {
 }
 h3.find-button {
     padding: 17px;
-    border: 5px solid;
+    border: 3px solid;
+    /*border: 5px solid;*/
     /*color: cadetblue;*/
     color: #6A6C6D;
     display: none;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
+    border-radius: 7px;
     position: relative;
     top: 0px !important;
     /*top: 130px;*/
