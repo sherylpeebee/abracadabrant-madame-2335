@@ -112,6 +112,7 @@ h3.find-button {
     position: relative;
     top: 130px;
     transition: background-color .8s ease;
+    font-size: inherit;
     /*transition: color .8s ease;*/
 }
 h3.find-button:hover {
