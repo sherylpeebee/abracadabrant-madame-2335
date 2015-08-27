@@ -14,10 +14,8 @@ angular.module('GriftrApp')
         $("#intro").addClass("animated bounceInRight").one(animationEnd, function(){
           //need to adjust times of these. too fast. kinda funky looking
           $(this).removeClass("animated bounceInRight").addClass("animated fadeOut").one(animationEnd, function(){
-            // $(".banner").animate({ top: -126 }, function(){
               $(".find-button").fadeIn(1000);
               console.log("hey");
-            // });
           });
         });
     }
