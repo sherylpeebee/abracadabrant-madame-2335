@@ -11,7 +11,7 @@ angular.module('GriftrApp')
     var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 
     function animateIntro (){
-        $("#intro").addClass("animated bounceInRight").on(animationEnd, function(){
+        $("#intro").addClass("animated bounceInRight").one(animationEnd, function(){
           //need to adjust times of these. too fast. kinda funky looking
           $(this).removeClass("animated bounceInRight").addClass("animated fadeOut").one(animationEnd, function(){
             // $(".banner").animate({ top: -126 }, function(){

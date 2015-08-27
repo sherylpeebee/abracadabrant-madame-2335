@@ -53,13 +53,6 @@ input {
     height: 578px;
   }
 
-.find {
-  -webkit-animation-duration: 1s;
-  cursor: pointer;
-  position: relative;
-  top: -150px;
-}
-
 #white-bar {
     height: 16%;
     width: 100%;
@@ -100,16 +93,7 @@ footer.page-footer .footer-copyright {
     color: rgba(255, 255, 255, 0.8);
      background-color: inherit;
 }
-h3.find-button {
-    padding: 17px;
-    border: 5px solid;
-    color: cadetblue;
-    /*display: inline;*/
-    display: none;
-    border-radius: 10px;
-    position: relative;
-    top: 130px;
-}
+
 
 h3#find-peace {
     position: relative;
@@ -121,4 +105,23 @@ h3#find-place {
     /* right: 0; */
     position: relative;
     right: 25%;
+}
+h3.find-button {
+    padding: 17px;
+    border: 5px solid;
+    /*color: cadetblue;*/
+    color: #6A6C6D;
+    display: none;
+    border-radius: 10px;
+    position: relative;
+    top: 130px;
+    transition: background-color .8s ease;
+    /*transition: color .8s ease;*/
+}
+h3.find-button:hover {
+    /*background-color: azure;*/
+    /*color: rgb(118, 154, 172);*/
+    /*background-color: rgba(86, 125, 148, 0.5);*/
+    cursor: pointer;
+    background-color: rgba(110, 150, 157, 0.5);
 }
