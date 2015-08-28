@@ -118,3 +118,13 @@ nav .nav-wrapper {
     position: relative;
     height: 100%;
 }
+
+div#sheet-layer {
+    height: 43.7vw;
+    width: 100%;
+    background-color: rgba(248, 247, 216, 0.7);
+    position: absolute;
+    top: 108px;
+    left: 0;
+    z-index: -3;
+}
