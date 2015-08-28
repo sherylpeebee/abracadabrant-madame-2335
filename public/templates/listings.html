@@ -1,7 +1,7 @@
 
 <div class="container">
       <div class="row">
-        <h1>Browse currently available homes</h1>
+        <h1 id="listingHeader">Browse currently available homes</h1>
 <input type="text" name="name" value="" placeholder="Search Homes" ng-model= "searchText" class="cyan-text text-lighten-5 blue-grey lighten-1 ">
         <div class="col s4" ng-repeat='house in houses | filter: searchText' >
           <div class="card">
