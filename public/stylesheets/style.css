@@ -26,7 +26,7 @@ body {
   background-image: url("http://i.huffpost.com/gen/1367942/images/o-TRAVEL-YOUNG-facebook.jpg");
   background-repeat: no-repeat;
   /*background-attachment: fixed;*/
-  /*background-size: 100%;*/
+  background-size: 100%;
   /*background-position: center;*/
   z-index: -1;
 }
