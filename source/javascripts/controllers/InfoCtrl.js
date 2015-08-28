@@ -1,8 +1,12 @@
 angular.module('GriftrApp')
-.controller("InfoCtrl", function($scope, $rootScope, $state, $location, $http){
+.controller("InfoCtrl", function($scope, $rootScope, $state, $location, $http, $stateParams){
 console.log("get dat info");
+// var param = $stateParams;
+// console.log(param);
+// $rootScope.paramCheck = Object.keys(param).length;
+// console.log($rootScope.paramCheck);
 
-
+$rootScope.currentState = $state.current.name;
 
 
 $('.collapsible').collapsible({

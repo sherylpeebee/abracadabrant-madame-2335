@@ -29,23 +29,12 @@ angular.module('GriftrApp')
 });
 
 angular.module('GriftrApp')
-.factory("Listing", function($http){
-  function Listing(){};
-  Listing.test = function() {
-    console.log('this is a test');
-    // return 'this is a test';
-  }
-  Listing.getListing = function(houseId){
-    console.log('house: ', houseId);
-    return $http.get("/listing/" + houseId);
-  }
-  return Listing;
-});
-angular.module('GriftrApp')
-.controller("HomeCtrl", function($stateParams, $rootScope){
+.controller("HomeCtrl", function($stateParams, $rootScope, $state){
   console.log("HOME CONTROLLLLLL!!!");
-  var param = $stateParams;
-  $rootScope.paramCheck = Object.keys(param).length;
+  $rootScope.currentState = $state.current.name;
+  // console.log($rootScope.currentState);
+  // var param = $stateParams;
+  // $rootScope.paramCheck = Object.keys(param).length;
 
   $(document).ready(function(){
     $('.parallax').parallax();
@@ -84,10 +73,14 @@ angular.module('GriftrApp')
 });
 
 angular.module('GriftrApp')
-.controller("InfoCtrl", function($scope, $rootScope, $state, $location, $http){
+.controller("InfoCtrl", function($scope, $rootScope, $state, $location, $http, $stateParams){
 console.log("get dat info");
+// var param = $stateParams;
+// console.log(param);
+// $rootScope.paramCheck = Object.keys(param).length;
+// console.log($rootScope.paramCheck);
 
-
+$rootScope.currentState = $state.current.name;
 
 
 $('.collapsible').collapsible({
@@ -148,15 +141,17 @@ $('.collapsible').collapsible({
 'use strict()';
 
 angular.module('GriftrApp')
-.controller('ListingCtrl', function($scope, $http, $rootScope, $location, Listing, $stateParams) {
+.controller('ListingCtrl', function($scope, $http, $rootScope, $location, Listing, $stateParams, $state) {
+
     $scope.test = "DOOKIEIEIEIE!!!";
     $(document).ready(function(){
       console.log("let's go");
       // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
       $('.modal-trigger').leanModal();
     });
-  var param = $stateParams;
-  $rootScope.paramCheck = Object.keys(param).length;
+  // var param = $stateParams;
+  // $rootScope.paramCheck = Object.keys(param).length;
+  $rootScope.currentState = $state.current.name;
     // console.log(house);
     $scope.params = $stateParams;
     Listing.getListing($stateParams.houseId)
@@ -173,17 +168,24 @@ angular.module('GriftrApp')
 'use strict()';
 
 angular.module('GriftrApp')
-.controller('ListingsCtrl', function($scope, $http, $rootScope, $location, Listing, $stateParams) {
+.controller('ListingsCtrl', function($scope, $http, $rootScope, $location, Listing, $stateParams, $state) {
+  // var param = $stateParams;
+  // $rootScope.paramCheck = Object.keys(param).length;
+  $rootScope.currentState = $state.current.name;
   console.log('Listings ctrl');
   $http.get("/listings").success(function(houses){
     // console.log(listings);
     $scope.houses = houses;
   });
 });
+
 'use strict()';
 
 angular.module('GriftrApp')
-.controller('ProfileCtrl', function($scope, $http, $rootScope) {
+.controller('ProfileCtrl', function($scope, $http, $rootScope, $stateParams, $state) {
+  // var param = $stateParams;
+  // $rootScope.paramCheck = Object.keys(param).length;
+  $rootScope.currentState = $state.current.name;
   console.log('Profile ctrl');
   $http.get("/ownerProfile")
   .success(function(houses){
@@ -209,7 +211,10 @@ angular.module('GriftrApp')
 'use strict()';
 
 angular.module('GriftrApp')
-.controller('PropCtrl', function($scope, $http, $rootScope) {
+.controller('PropCtrl', function($scope, $http, $rootScope, $stateParams, $state) {
+  // var param = $stateParams;
+  // $rootScope.paramCheck = Object.keys(param).length;
+  $rootScope.currentState = $state.current.name;
   console.log('Prop ctrl');
   $scope.test = 'Test!';
 });
@@ -217,17 +222,23 @@ angular.module('GriftrApp')
 'use strict()';
 
 angular.module('GriftrApp')
-.controller('TravellersCtrl', function($scope, $http, $rootScope) {
+.controller('TravellersCtrl', function($scope, $http, $rootScope, $stateParams, $state) {
+  // var param = $stateParams;
+  // $rootScope.paramCheck = Object.keys(param).length;
+  $rootScope.currentState = $state.current.name;
   $http.get("/travellers").success(function(travellers){
     // console.log(listings);
     $scope.travellers = travellers;
-  });  
+  });
 });
 
 'use strict()';
 
 angular.module('GriftrApp')
-.controller('NavCtrl', function($scope, $http, $rootScope, $state) {
+.controller('NavCtrl', function($scope, $http, $rootScope, $state, $stateParams) {
+  // var param = $stateParams;
+  // $rootScope.paramCheck = Object.keys(param).length;
+  $rootScope.currentState = $state.current.name;
   console.log('nav ctrl');
   $http.get("/getUserData").success(function(userData){
     console.log(userData);
@@ -244,4 +255,18 @@ angular.module('GriftrApp')
 
     console.log($rootScope.currentUser);
   };
+});
+
+angular.module('GriftrApp')
+.factory("Listing", function($http){
+  function Listing(){};
+  Listing.test = function() {
+    console.log('this is a test');
+    // return 'this is a test';
+  }
+  Listing.getListing = function(houseId){
+    console.log('house: ', houseId);
+    return $http.get("/listing/" + houseId);
+  }
+  return Listing;
 });

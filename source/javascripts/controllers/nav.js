@@ -1,7 +1,10 @@
 'use strict()';
 
 angular.module('GriftrApp')
-.controller('NavCtrl', function($scope, $http, $rootScope, $state) {
+.controller('NavCtrl', function($scope, $http, $rootScope, $state, $stateParams) {
+  // var param = $stateParams;
+  // $rootScope.paramCheck = Object.keys(param).length;
+  $rootScope.currentState = $state.current.name;
   console.log('nav ctrl');
   $http.get("/getUserData").success(function(userData){
     console.log(userData);

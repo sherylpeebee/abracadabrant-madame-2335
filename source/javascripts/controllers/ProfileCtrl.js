@@ -1,7 +1,10 @@
 'use strict()';
 
 angular.module('GriftrApp')
-.controller('ProfileCtrl', function($scope, $http, $rootScope) {
+.controller('ProfileCtrl', function($scope, $http, $rootScope, $stateParams, $state) {
+  // var param = $stateParams;
+  // $rootScope.paramCheck = Object.keys(param).length;
+  $rootScope.currentState = $state.current.name;
   console.log('Profile ctrl');
   $http.get("/ownerProfile")
   .success(function(houses){
