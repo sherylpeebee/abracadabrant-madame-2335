@@ -1,20 +1,20 @@
 
 <div class="container">
       <div class="row">
-        <h1>HOUSES</h1>
-<input type="text" name="name" value="" placeholder="Search Homes" ng-model= "search" class="blue-text text-lighten-3">
-        <div class="col s4" ng-repeat='house in houses | filter:search' >
+        <h1>Browse currently available homes</h1>
+<input type="text" name="name" value="" placeholder="Search Homes" ng-model= "searchText" class="cyan-text text-lighten-5 blue-grey lighten-1 ">
+        <div class="col s4" ng-repeat='house in houses | filter: searchText' >
           <div class="card">
             <div class="card-image">
               <img ng-src="{{house.image}}">
-              <span class="card-title">{{house.location}}</span>
+              <span class="card-title listingLocation">{{house.location}}</span>
             </div>
             <div class="card-content">
-              <div>Bedrooms: {{house.squareFoot}}</div>
+              <div>Square Feet: {{house.squareFoot}}</div>
               <div>Bedrooms: {{house.bedrooms}}</div>
               <div>Bathrooms: {{house.bathrooms}}</div>
-              <div>Start Date: {{house.startDate}}</div>
-              <div>End Date: {{house.endDate}}</div>
+              <div>Start Date: {{house.startDate | date: "longDate"}}</div>
+              <div>End Date: {{house.endDate | date: "longDate"}}</div>
               <!-- <div>Id: {{house._id}}</div> -->
             </div>
             <div class="card-action">

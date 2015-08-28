@@ -29,6 +29,19 @@ angular.module('GriftrApp')
 });
 
 angular.module('GriftrApp')
+.factory("Listing", function($http){
+  function Listing(){};
+  Listing.test = function() {
+    console.log('this is a test');
+    // return 'this is a test';
+  }
+  Listing.getListing = function(houseId){
+    console.log('house: ', houseId);
+    return $http.get("/listing/" + houseId);
+  }
+  return Listing;
+});
+angular.module('GriftrApp')
 .controller("HomeCtrl", function($stateParams, $rootScope){
   console.log("HOME CONTROLLLLLL!!!");
   var param = $stateParams;
@@ -47,7 +60,7 @@ angular.module('GriftrApp')
           //need to adjust times of these. too fast. kinda funky looking
           $(this).removeClass("animated bounceInRight").addClass("animated fadeOut").one(animationEnd, function(){
               $(".find-button").fadeIn(1000);
-              console.log("hey");
+              // console.log("hey");
           });
         });
     }
@@ -136,20 +149,25 @@ $('.collapsible').collapsible({
 
 angular.module('GriftrApp')
 .controller('ListingCtrl', function($scope, $http, $rootScope, $location, Listing, $stateParams) {
+    $scope.test = "DOOKIEIEIEIE!!!";
+    $(document).ready(function(){
+      console.log("let's go");
+      // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+      $('.modal-trigger').leanModal();
+    });
   var param = $stateParams;
   $rootScope.paramCheck = Object.keys(param).length;
-
     // console.log(house);
     $scope.params = $stateParams;
     Listing.getListing($stateParams.houseId)
     .then(function(data){
       console.log(data.data);
+      console.log("I'm ALIIIIVVVVEEEEUHH!!!");
       $scope.houseInfo = data.data;
     })
     .catch(function(error){
       console.log(error);
     });
-
 });
 
 'use strict()';
@@ -226,18 +244,4 @@ angular.module('GriftrApp')
 
     console.log($rootScope.currentUser);
   };
-});
-
-angular.module('GriftrApp')
-.factory("Listing", function($http){
-  function Listing(){};
-  Listing.test = function() {
-    console.log('this is a test');
-    // return 'this is a test';
-  }
-  Listing.getListing = function(houseId){
-    console.log('house: ', houseId);
-    return $http.get("/listing/" + houseId);
-  }
-  return Listing;
 });

@@ -151,6 +151,33 @@ div#sheet-layer {
 .ng-scope {
     margin-bottom: 40px;
 }
+
+.listingLocation {
+    text-transform: capitalize;
+}
+
+h4#request_header {
+    color: black;
+}
+button#request_btn {
+    margin-top: 38px;
+    background-color: cadetblue;
+}
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: #fafafa;
+    padding: 0;
+    /*max-height: 70%;*/
+    height: 700px !important;
+    width: 55%;
+    margin: auto;
+    overflow-y: auto;
+    border-radius: 8px;
+    will-change: top, opacity;
+}
 /*https://pbs.twimg.com/profile_images/378800000397127630/3c7dfe9f2943408ca178dede7c6ec39a.jpeg*/
 
 
