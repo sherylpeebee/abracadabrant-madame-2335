@@ -22,7 +22,8 @@ img {
 }
 body {
   /*margin: 0;*/
-  /*background-color: rgb(111, 199, 249);*/
+  /*background-color: #90A4AE;*/
+  background-color: rgba(37, 85, 87, 0.7);
   background-image: url("http://i.huffpost.com/gen/1367942/images/o-TRAVEL-YOUNG-facebook.jpg");
   background-repeat: no-repeat;
   /*background-attachment: fixed;*/
@@ -47,10 +48,6 @@ img#left-banner {
     /*margin-bottom: 11%;*/
     margin-top: -125px;
 }
-/*https://pbs.twimg.com/profile_images/378800000397127630/3c7dfe9f2943408ca178dede7c6ec39a.jpeg*/
-
-
-/*http://sharetu.com/wp-content/uploads/2015/07/o-TRAVELING-ALONE-facebook.jpg*/
 
 div#footer-containter {
     height: 110px;
@@ -119,12 +116,35 @@ nav .nav-wrapper {
     height: 100%;
 }
 
-div#sheet-layer {
+/*div#sheet-layer {
     height: 43.7vw;
     width: 100%;
     background-color: rgba(248, 247, 216, 0.7);
+    background-color: rgba(37, 85, 87, 0.69);
+    position: absolute;
+    top: 108px;
+    left: 0;
+    z-index: -3;
+}*/
+
+div#sheet-layer {
+    height: 80vw;
+    width: 100%;
+    background-color: rgba(37, 85, 87, 0.69);
     position: absolute;
     top: 108px;
     left: 0;
     z-index: -3;
 }
+
+.parallax-container {
+    position: relative;
+    overflow: hidden;
+    height: 900px;
+    /* bottom: 0; */
+    top: 36pc;
+}
+/*https://pbs.twimg.com/profile_images/378800000397127630/3c7dfe9f2943408ca178dede7c6ec39a.jpeg*/
+
+
+/*http://sharetu.com/wp-content/uploads/2015/07/o-TRAVELING-ALONE-facebook.jpg*/

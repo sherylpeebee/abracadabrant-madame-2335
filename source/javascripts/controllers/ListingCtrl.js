@@ -2,6 +2,8 @@
 
 angular.module('GriftrApp')
 .controller('ListingCtrl', function($scope, $http, $rootScope, $location, Listing, $stateParams) {
+  var param = $stateParams;
+  $rootScope.paramCheck = Object.keys(param).length;
 
     // console.log(house);
     $scope.params = $stateParams;

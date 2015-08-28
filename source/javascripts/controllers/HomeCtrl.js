@@ -1,6 +1,8 @@
 angular.module('GriftrApp')
-.controller("HomeCtrl", function(){
+.controller("HomeCtrl", function($stateParams, $rootScope){
   console.log("HOME CONTROLLLLLL!!!");
+  var param = $stateParams;
+  $rootScope.paramCheck = Object.keys(param).length;
 
   $(document).ready(function(){
     $('.parallax').parallax();

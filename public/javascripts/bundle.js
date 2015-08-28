@@ -29,8 +29,10 @@ angular.module('GriftrApp')
 });
 
 angular.module('GriftrApp')
-.controller("HomeCtrl", function(){
+.controller("HomeCtrl", function($stateParams, $rootScope){
   console.log("HOME CONTROLLLLLL!!!");
+  var param = $stateParams;
+  $rootScope.paramCheck = Object.keys(param).length;
 
   $(document).ready(function(){
     $('.parallax').parallax();
@@ -134,6 +136,8 @@ $('.collapsible').collapsible({
 
 angular.module('GriftrApp')
 .controller('ListingCtrl', function($scope, $http, $rootScope, $location, Listing, $stateParams) {
+  var param = $stateParams;
+  $rootScope.paramCheck = Object.keys(param).length;
 
     // console.log(house);
     $scope.params = $stateParams;
@@ -147,6 +151,7 @@ angular.module('GriftrApp')
     });
 
 });
+
 'use strict()';
 
 angular.module('GriftrApp')
