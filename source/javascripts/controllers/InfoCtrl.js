@@ -15,6 +15,7 @@ $('.collapsible').collapsible({
 
 $(document).ready(function(){
   $("#buildProfileBtn").click(loginPompt);
+  $("#editProfileBtn").click(loginPompt);
 });
 
 function loginPompt(){
