@@ -31,11 +31,11 @@
   </ul>
 
 
-<h4 class="center" ng-if="!hideForm">Build Your Profile</h4>
+<h4 class="center" ng-hide="!hideForm">Build Your Profile</h4>
 
 <div class="container">
 <div class="row">
-    <form class="col s12" ng-submit="submitInfo(user)" name="user" ng-if="!hideForm">
+    <form class="col s12" ng-submit="submitInfo(user)" name="user" ng-hide="!hideForm">
       <div class="row">
         <div class="input-field col s6">
           <input id="firstName" type="text" class="validate" ng-model="user.firstName" required="true" />
