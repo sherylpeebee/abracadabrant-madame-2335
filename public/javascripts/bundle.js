@@ -80,6 +80,7 @@ console.log("get dat info");
 // $rootScope.paramCheck = Object.keys(param).length;
 // console.log($rootScope.paramCheck);
 
+
 $rootScope.currentState = $state.current.name;
 
 
@@ -90,10 +91,12 @@ $('.collapsible').collapsible({
   if($rootScope.currentUser){
     currentUser = $rootScope.currentUser;
   } else{
-    currentUser = null; // Add more to catch null?
+    // currentUser = null; // Add more to catch null?
+    alertify.alert('<a href="/auth/twitter">Please Login to Continue</a>').set('onok', function(closeEvent){ alertify.success("You're the best!");} );
+    // alertify.success('successfully logged in')
   }
 
-  $scope.hideForm = currentUser.owner ? true : false;
+  $scope.hideForm = currentUser.owner ? false : true;
 
   $scope.submitInfo = function(user){
     if($state.current.name === "info.owner"){
@@ -142,8 +145,6 @@ $('.collapsible').collapsible({
 
 angular.module('GriftrApp')
 .controller('ListingCtrl', function($scope, $http, $rootScope, $location, Listing, $stateParams, $state) {
-
-    $scope.test = "DOOKIEIEIEIE!!!";
     $(document).ready(function(){
       console.log("let's go");
       // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
@@ -152,17 +153,19 @@ angular.module('GriftrApp')
   // var param = $stateParams;
   // $rootScope.paramCheck = Object.keys(param).length;
   $rootScope.currentState = $state.current.name;
-    // console.log(house);
-    $scope.params = $stateParams;
+
     Listing.getListing($stateParams.houseId)
     .then(function(data){
       console.log(data.data);
-      console.log("I'm ALIIIIVVVVEEEEUHH!!!");
       $scope.houseInfo = data.data;
     })
     .catch(function(error){
       console.log(error);
     });
+
+  $scope.makeHousingRequest = function(request){
+    console.log(request);
+  };
 });
 
 'use strict()';
@@ -246,27 +249,31 @@ angular.module('GriftrApp')
   });
   $scope.goToProfile = function() {
     if ($rootScope.currentUser.owner) {
-      console.log('owner');
+      console.log('owner: ', $rootScope.currentUser.owner);
       $state.go('info.owner');
     } else {
-      console.log('traveller');
+      console.log('traveller: ', $rootScope.currentUser.traveller);
       $state.go('info.traveller');
     }
-
     console.log($rootScope.currentUser);
   };
 });
 
 angular.module('GriftrApp')
 .factory("Listing", function($http){
-  function Listing(){};
+  function Listing(){}
   Listing.test = function() {
     console.log('this is a test');
     // return 'this is a test';
-  }
+  };
   Listing.getListing = function(houseId){
     console.log('house: ', houseId);
     return $http.get("/listing/" + houseId);
-  }
+  };
+
+  Listing.requestHousings = function(houseId){
+    console.log('house: ', houseId);
+    return $http.get("/listing/" + houseId);
+  };
   return Listing;
 });

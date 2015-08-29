@@ -1,5 +1,5 @@
 <ul class="collapsible" data-collapsible="accordion">
-    <li ng-show="hideForm">
+    <li ng-if="!hideForm">
       <div class="collapsible-header" id="edit_profile"><i class="material-icons">assignment_ind</i>Edit Your Profile</div>
       <div class="collapsible-body">
 
@@ -31,11 +31,11 @@
   </ul>
 
 
-<h4 class="center" ng-hide="hideForm">Build Your Profile</h4>
+<h4 class="center" ng-if="!hideForm">Build Your Profile</h4>
 
 <div class="container">
 <div class="row">
-    <form class="col s12" ng-submit="submitInfo(user)" name="user" ng-hide="hideForm">
+    <form class="col s12" ng-submit="submitInfo(user)" name="user" ng-if="!hideForm">
       <div class="row">
         <div class="input-field col s6">
           <input id="firstName" type="text" class="validate" ng-model="user.firstName" required="true" />

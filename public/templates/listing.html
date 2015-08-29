@@ -38,13 +38,13 @@
           <div class="modal-content">
             <h4 id="request_header">Request a Reservation for <span class="listingLocation">{{houseInfo.location}}</span></h4>
             <div class="row">
-              <form class="col s12">
+              <form class="col s12" ng-submit="makeHousingRequest(housingRequest)">
                 <!-- <div class="input-field col s6">
                   <input id="first_name2" type="text" class="validate">
                   <label class="active" for="first_name2">First Name</label>
                 </div> -->
                 <div class="input-field col s12">
-                  <textarea id="textarea1" class="materialize-textarea" placeholder="ex: I promise I'm not a serial killer."></textarea>
+                  <textarea id="textarea1" class="materialize-textarea" placeholder="ex: I promise I'm not a serial killer." ng-model="housingRequest.message"></textarea>
                   <label for="textarea1" class="active">Optional Message</label>
                   <div>
                     I am willing to:
@@ -53,16 +53,14 @@
                   <div class="row">
                     <!-- <div class="col s6"> -->
                       <p ng-repeat="condition in ['pet sit', 'water the plants', 'not smoke', 'call with updates', 'other'] track by $index" class="col s6">
-                        <input type="checkbox" class="filled-in" id="{{condition}}" />
+                        <input type="checkbox" class="filled-in" id="{{condition}}" ng-model="housingRequest[condition]"/>
                         <label for="{{condition}}">{{condition}}</label>
                       </p>
                     <!-- </div> -->
                   </div>
 
-
-
                 </div>
-                <button type="button" name="button" id="request_btn" href="#" class="btn modal-action modal-close">Send Request</button>
+                <button type="submit" name="button" id="request_btn" href="#" class="btn modal-action modal-close">Send Request</button>
               </form>
             </div>
           </div>

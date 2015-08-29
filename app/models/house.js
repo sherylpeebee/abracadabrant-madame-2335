@@ -9,7 +9,7 @@ var houseSchema = mongoose.Schema({
   image: { type: String },
   startDate: { type: String },
   endDate: { type: String },
-  info         : {
+  conditions         : {
     pets          : Boolean,
     plants        : Boolean,
     updates       : Boolean,

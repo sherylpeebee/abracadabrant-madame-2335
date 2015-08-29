@@ -6,6 +6,7 @@ console.log("get dat info");
 // $rootScope.paramCheck = Object.keys(param).length;
 // console.log($rootScope.paramCheck);
 
+
 $rootScope.currentState = $state.current.name;
 
 
@@ -16,10 +17,12 @@ $('.collapsible').collapsible({
   if($rootScope.currentUser){
     currentUser = $rootScope.currentUser;
   } else{
-    currentUser = null; // Add more to catch null?
+    // currentUser = null; // Add more to catch null?
+    alertify.alert('<a href="/auth/twitter">Please Login to Continue</a>').set('onok', function(closeEvent){ alertify.success("You're the best!");} );
+    // alertify.success('successfully logged in')
   }
 
-  $scope.hideForm = currentUser.owner ? true : false;
+  $scope.hideForm = currentUser.owner ? false : true;
 
   $scope.submitInfo = function(user){
     if($state.current.name === "info.owner"){
