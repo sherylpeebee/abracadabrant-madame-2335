@@ -5,26 +5,38 @@ console.log("get dat info");
 // console.log(param);
 // $rootScope.paramCheck = Object.keys(param).length;
 // console.log($rootScope.paramCheck);
-
+var currentUser;
 
 $rootScope.currentState = $state.current.name;
-
 
 $('.collapsible').collapsible({
   accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
 });
 
+$(document).ready(function(){
+  $("#buildProfileBtn").click(loginPompt);
+});
+
+function loginPompt(){
+  if(!currentUser){
+    alertify.alert('Seriously! You gotta <a href="/auth/twitter">log in</a>.').set('onok', function(closeEvent){ alertify.success("You're a good person.");} );
+    console.log("no dice");
+  }
+}
+
+
   if($rootScope.currentUser){
     currentUser = $rootScope.currentUser;
   } else{
     // currentUser = null; // Add more to catch null?
-    alertify.alert('<a href="/auth/twitter">Please Login to Continue</a>').set('onok', function(closeEvent){ alertify.success("You're the best!");} );
+    alertify.alert('Please <a href="/auth/twitter">Login</a> to Continue').set('onok', function(closeEvent){ alertify.success("You're the best!");} );
     // alertify.success('successfully logged in')
   }
 
   $scope.hideForm = currentUser.owner ? false : true;
 
   $scope.submitInfo = function(user){
+
     if($state.current.name === "info.owner"){
       currentUser.userType = 'owner';
       currentUser.owner.firstName = user.firstName;
