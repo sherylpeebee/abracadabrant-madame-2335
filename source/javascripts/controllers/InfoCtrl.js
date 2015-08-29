@@ -5,26 +5,25 @@ console.log("get dat info");
 // console.log(param);
 // $rootScope.paramCheck = Object.keys(param).length;
 // console.log($rootScope.paramCheck);
-var currentUser;
+  var currentUser;
 
-$rootScope.currentState = $state.current.name;
+  $rootScope.currentState = $state.current.name;
 
-$('.collapsible').collapsible({
-  accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-});
+  $('.collapsible').collapsible({
+    accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+  });
 
-$(document).ready(function(){
-  $("#buildProfileBtn").click(loginPompt);
-  $("#editProfileBtn").click(loginPompt);
-});
+  $(document).ready(function(){
+    $("#buildProfileBtn").click(loginPompt);
+    $("#editProfileBtn").click(loginPompt);
+  });
 
-function loginPompt(){
-  if(!currentUser){
-    alertify.alert('Seriously! You gotta <a href="/auth/twitter">log in</a>.').set('onok', function(closeEvent){ alertify.success("You're a good person.");} );
-    console.log("no dice");
+  function loginPompt(){
+    if(!currentUser){
+      alertify.alert('Seriously! You gotta <a href="/auth/twitter">log in</a>.').set('onok', function(closeEvent){ alertify.success("You're a good person.");} );
+      console.log("no dice");
+    }
   }
-}
-
 
   if($rootScope.currentUser){
     currentUser = $rootScope.currentUser;

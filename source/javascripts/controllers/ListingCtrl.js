@@ -6,7 +6,15 @@ angular.module('GriftrApp')
       console.log("let's go");
       // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
       $('.modal-trigger').leanModal();
+      $("#request_btn").click(loginPompt);
+      // $("#reservation_request").click(loginPompt);
     });
+
+    function loginPompt(){
+      if(!$rootScope.currentUser){
+        alertify.alert('Please <a href="/auth/twitter">Login</a> to Continue').set('onok', function(closeEvent){ alertify.success("You're the best!");} );
+      }
+    }
   // var param = $stateParams;
   // $rootScope.paramCheck = Object.keys(param).length;
   $rootScope.currentState = $state.current.name;
